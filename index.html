@@ -10,14 +10,15 @@
 
 <body>
 
-    <button onclick="randNumber()" class="btn">Random your friends</button>
+    <button onclick="randNumber()" class="btn-0">Random your friends</button>
     <p>Friends Input: <span id="rand"></span></p>
     <div id="friendsDiv"></div>
-    <button onclick="sumAge()" class="btn">Sum age</button>
-    <button onclick="averageAge()" class="btn">Average age</button>
-    <button onclick="findYoungest()" class="btn">Find youngest</button>
-    <button onclick="findOldest()" class="btn">Find oldest</button>
-    <button onclick="reset()" class="btn">Reset</button>
+    <br>
+    <button onclick="sumAge()" class="btn-1">Sum age</button>
+    <button onclick="averageAge()" class="btn-2">Average age</button>
+    <button onclick="findYoungest()" class="btn-3">Find youngest</button>
+    <button onclick="findOldest()" class="btn-4">Find oldest</button>
+    <button onclick="reset()" class="btn-5">Reset</button>
 
     <p id="sum"></p>
     <p id="average"></p>
@@ -141,7 +142,6 @@
                 friendsAge[i].value = "";
                 friendsName[i].value = "";
             }
-            document.getElementsById("reset");
         }
 
     </script>

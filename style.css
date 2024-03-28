@@ -1,8 +1,81 @@
 * {
-    background-color: blueviolet;
+    background-color: #F9D1D1;
 }
 
-.btn {
-    background-color: aqua;
+p,
+div {
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-left: 15px;
+}
+
+.btn-0 {
+    background-color: #0B1354;
+    color: #F9D1D1;
     border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 10px 15px;
+}
+
+.btn-1 {
+    background-color: #FFA4B6;
+    color: #0B1354;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-2 {
+    background-color: #F765A3;
+    color: #0B1354;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.btn-3 {
+    background-color: #A155B9;
+    color: #F9D1D1;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.btn-4 {
+    background-color: #165BAA;
+    color: #F9D1D1;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.btn-5 {
+    background-color: #d10808;
+    color: #F9D1D1;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+.nickname {
+    border-radius: 4px;
+    width: 180px;
+    height: 20px;
+}
+
+.age {
+    border-radius: 4px;
+    width: 180px;
+    height: 20px;
 }
