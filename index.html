@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Friends</title>
+</head>
+
+<body>
+
+    <button onclick="randNumber()" class="btn">Random your friends</button>
+    <p>Friends Input: <span id="rand"></span></p>
+    <div id="friendsDiv"></div>
+    <button onclick="sumAge()" class="btn">Sum age</button>
+    <button onclick="averageAge()" class="btn">Average age</button>
+    <button onclick="findYoungest()" class="btn">Find youngest</button>
+    <button onclick="findOldest()" class="btn">Find oldest</button>
+    <button onclick="reset()" class="btn">Reset</button>
+
+    <p id="sum"></p>
+    <p id="average"></p>
+    <p id="youngest"></p>
+    <p id="oldest"></p>
+
+    <script>
+        function randNumber() {
+            var randN = Math.floor(Math.random() * 9) + 1;
+            document.getElementById("rand").innerHTML = randN;
+
+            var friendsInput = document.getElementById("friendsDiv");
+            friendsInput.innerHTML = "";
+
+            for (var i = 0; i < randN; i++) {
+                var friendInput = document.createElement("div");
+                friendInput.innerHTML = "Nickname: <input type='text' class='nickname'> &nbsp&nbsp Age: <input type='number' class='age'>";
+                friendsInput.appendChild(friendInput);
+            }
+        }
+
+        function sumAge() {
+            if (!checkNameInput()) {
+                return;
+            }
+            var sumAge = 0;
+            var friendsInput = document.getElementById("friendsDiv");
+            var ageInputs = friendsInput.querySelectorAll(".age");
+
+            ageInputs.forEach(function (ageInput) {
+                sumAge += parseInt(ageInput.value);
+            });
+
+            document.getElementById("sum").innerHTML = "Sum of friends' age: " + sumAge;
+
+            return sumAge;
+        }
+
+        function averageAge() {
+            if (!checkNameInput()) {
+                return;
+            }
+            var sumElement = document.getElementById("sum");
+            var sum = parseInt(sumElement.textContent.replace("Sum of friends' age: ", ""));
+            var randN = parseInt(document.getElementById("rand").textContent);
+            var average = sum / randN;
+
+            document.getElementById("average").innerHTML = "Average of friends' age: " + average;
+        }
+
+        function findYoungest() {
+            if (!checkNameInput()) {
+                return;
+            }
+            var minAge = Infinity;
+            var youngestName = [];
+            var friendsName = document.querySelectorAll("#friendsDiv .nickname");
+            var friendsAge = document.querySelectorAll("#friendsDiv .age");
+
+            var randN = parseInt(document.getElementById("rand").textContent);
+
+            for (var i = 0; i < randN; i++) {
+                var age = parseInt(friendsAge[i].value);
+                var name = friendsName[i].value;
+                if (age < minAge) {
+                    minAge = age;
+                    youngestName = [name];
+                } else if (age === minAge) {
+                    youngestName.push(name);
+                }
+            }
+
+            document.getElementById("youngest").innerHTML = "Youngest friends' name: " + youngestName.join(", ");
+        }
+
+        function findOldest() {
+            if (!checkNameInput()) {
+                return;
+            }
+            var maxAge = -Infinity;
+            var oldestName = [];
+            var friendsName = document.querySelectorAll("#friendsDiv .nickname");
+            var friendsAge = document.querySelectorAll("#friendsDiv .age");
+
+            var randN = parseInt(document.getElementById("rand").textContent);
+
+            for (var i = 0; i < randN; i++) {
+                var age = parseInt(friendsAge[i].value);
+                var name = friendsName[i].value;
+                if (age > maxAge) {
+                    maxAge = age;
+                    oldestName = [name];
+                } else if (age === maxAge) {
+                    oldestName.push(name);
+                }
+            }
+
+            document.getElementById("oldest").innerHTML = "Oldest friends' name: " + oldestName.join(", ");
+        }
+
+        function checkNameInput() {
+            var friendsName = document.querySelectorAll("#friendsDiv .nickname");
+            var randN = parseInt(document.getElementById("rand").textContent);
+
+            for (var i = 0; i < randN; i++) {
+                var name = friendsName[i].value;
+                if (!name.length) {
+                    alert("Please enter names for all friends.");
+                    return false; // Stop execution if any name input is empty
+                }
+            }
+            return true;
+        }
+
+        function reset() {
+            var friendsName = document.querySelectorAll("#friendsDiv .nickname");
+            var friendsAge = document.querySelectorAll("#friendsDiv .age");
+            var randN = parseInt(document.getElementById("rand").textContent);
+
+            for (var i = 0; i < randN; i++) {
+                friendsAge[i].value = "";
+                friendsName[i].value = "";
+            }
+            document.getElementsById("reset");
+        }
+
+    </script>
+
+</body>
+
+</html>
