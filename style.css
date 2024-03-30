@@ -1,5 +1,9 @@
 * {
     background-color: #F9D1D1;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
 }
 
 p,
@@ -7,6 +11,7 @@ div {
     font-size: 18px;
     padding-bottom: 10px;
     margin-left: 15px;
+    color: #0B1354;
 }
 
 .btn-0 {
@@ -16,6 +21,14 @@ div {
     border-radius: 10px;
     font-size: 25px;
     padding: 10px 15px;
+    margin-top: 40px;
+}
+
+.btn-0:hover {
+    background-color: #0B1354;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
 }
 
 .btn-1 {
@@ -23,6 +36,17 @@ div {
     color: #0B1354;
     border: none;
     border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-1:hover {
+    background-color: #FFA4B6;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
     font-size: 20px;
     padding: 10px 15px;
     margin-right: 10px;
@@ -39,11 +63,31 @@ div {
     margin-right: 10px;
 }
 
+.btn-2:hover {
+    background-color: #F765A3;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
 .btn-3 {
     background-color: #A155B9;
     color: #F9D1D1;
     border: none;
     border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.btn-3:hover {
+    background-color: #A155B9;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
     font-size: 20px;
     padding: 10px 15px;
     margin-right: 10px;
@@ -59,11 +103,30 @@ div {
     margin-right: 10px;
 }
 
+.btn-4:hover {
+    background-color: #165BAA;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
 .btn-5 {
     background-color: #d10808;
     color: #F9D1D1;
     border: none;
     border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+.btn-5:hover {
+    background-color: #d10808;
+    color: #ffffff;
+    border: 5px solid #b7ff00;
+    border-radius: 20px;
     font-size: 20px;
     padding: 10px 15px;
 }
@@ -78,4 +141,18 @@ div {
     border-radius: 4px;
     width: 180px;
     height: 20px;
+}
+
+#count {
+    font-size: 25px;
+}
+
+.nickname:focus,
+.nickname:active,
+.age:focus,
+.age:active {
+    color: black;
+    font-size: 18px;
+    border: 5px solid #b7ff00;
+    border-radius: 8px;
 }

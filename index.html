@@ -10,15 +10,21 @@
 
 <body>
 
-    <button onclick="randNumber()" class="btn-0">Random your friends</button>
-    <p>Friends Input: <span id="rand"></span></p>
+    <button onclick="randNumber()" class="btn-0">Click for RANDOM your friends</button>
+    <p id="count">Friends Input: <span id="rand"></span></p>
     <div id="friendsDiv"></div>
     <br>
-    <button onclick="sumAge()" class="btn-1">Sum age</button>
-    <button onclick="averageAge()" class="btn-2">Average age</button>
-    <button onclick="findYoungest()" class="btn-3">Find youngest</button>
-    <button onclick="findOldest()" class="btn-4">Find oldest</button>
-    <button onclick="reset()" class="btn-5">Reset</button>
+    <button onclick="sumAge(); changeText(this.id, this)" onmouseover="mOver(this.id, this)"
+        onmouseout="mOut(this.id, this)" id="sumAge" class="btn-1">Sum
+        age</button>
+    <button onclick="averageAge(); changeText(this.id, this)" onmouseover="mOver(this.id, this)"
+        onmouseout="mOut(this.id, this)" id="averageAge" class="btn-2">Average age</button>
+    <button onclick="findYoungest(); changeText(this.id, this)" onmouseover="mOver(this.id, this)"
+        onmouseout="mOut(this.id, this)" id="findYoungest" class="btn-3">Find youngest</button>
+    <button onclick="findOldest(); changeText(this.id, this)" onmouseover="mOver(this.id, this)"
+        onmouseout="mOut(this.id, this)" id="findOldest" class="btn-4">Find oldest</button>
+    <button onclick="reset()" onmouseover="mOver(this.id, this)" onmouseout="mOut(this.id, this)" id="reset"
+        class="btn-5">Reset</button>
 
     <p id="sum"></p>
     <p id="average"></p>
@@ -26,6 +32,70 @@
     <p id="oldest"></p>
 
     <script>
+        var originalText = {
+            "sumAge": "Sum age",
+            "averageAge": "Average age",
+            "findYoungest": "Find youngest",
+            "findOldest": "Find oldest",
+            "reset": "Reset"
+        };
+
+        function changeText(id, button) {
+            if (id === "sumAge") {
+                button.innerHTML = "sum already!";
+            }
+            else if (id === "averageAge") {
+                button.innerHTML = "calculate already!";
+            }
+            else if (id === "findYoungest") {
+                button.innerHTML = "found youngest already!";
+            }
+            else if (id === "findOldest") {
+                button.innerHTML = "found oldest already!";
+            }
+            else if (id === "reset") {
+                for (var original in originalText) {
+                    document.getElementById(original).innerHTML = originalText[original];
+                }
+            }
+        }
+
+        function mOver(id, button) {
+            if (id === "sumAge") {
+                button.innerHTML = "SUM AGE!";
+            }
+            else if (id === "averageAge") {
+                button.innerHTML = "AVERAGE AGE!";
+            }
+            else if (id === "findYoungest") {
+                button.innerHTML = "FIND YOUNGEST!";
+            }
+            else if (id === "findOldest") {
+                button.innerHTML = "FIND OLDEST!";
+            }
+            else if (id === "reset") {
+                button.innerHTML = "RESET!";
+            }
+        }
+
+        function mOut(id, button) {
+            if (id === "sumAge") {
+                button.innerHTML = "Sum age";
+            }
+            else if (id === "averageAge") {
+                button.innerHTML = "Average age";
+            }
+            else if (id === "findYoungest") {
+                button.innerHTML = "Find youngest";
+            }
+            else if (id === "findOldest") {
+                button.innerHTML = "Find oldest";
+            }
+            else if (id === "reset") {
+                button.innerHTML = "Reset";
+            }
+        }
+
         function randNumber() {
             var randN = Math.floor(Math.random() * 9) + 1;
             document.getElementById("rand").innerHTML = randN;
@@ -142,6 +212,15 @@
                 friendsAge[i].value = "";
                 friendsName[i].value = "";
             }
+
+            for (var id in originalText) {
+                document.getElementById(id).innerHTML = originalText[id];
+            }
+
+            document.getElementById("sum").innerHTML = "";
+            document.getElementById("average").innerHTML = "";
+            document.getElementById("youngest").innerHTML = "";
+            document.getElementById("oldest").innerHTML = "";
         }
 
     </script>
